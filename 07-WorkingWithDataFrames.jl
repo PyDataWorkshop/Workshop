@@ -65,29 +65,7 @@ showln(eltypes(iris))
 
 # Subset the DataFrame to only include rows for one species
 showln(iris[iris[:Species] .== "setosa", :])
-#> 50x5 DataFrame
-#> |-------|-------------|------------|-------------|------------|----------|
-#> | Row # | SepalLength | SepalWidth | PetalLength | PetalWidth | Species  |
-#> | 1     | 5.1         | 3.5        | 1.4         | 0.2        | "setosa" |
-#> | 2     | 4.9         | 3.0        | 1.4         | 0.2        | "setosa" |
-#> | 3     | 4.7         | 3.2        | 1.3         | 0.2        | "setosa" |
-#> | 4     | 4.6         | 3.1        | 1.5         | 0.2        | "setosa" |
-#> | 5     | 5.0         | 3.6        | 1.4         | 0.2        | "setosa" |
-#> | 6     | 5.4         | 3.9        | 1.7         | 0.4        | "setosa" |
-#> | 7     | 4.6         | 3.4        | 1.4         | 0.3        | "setosa" |
-#> | 8     | 5.0         | 3.4        | 1.5         | 0.2        | "setosa" |
-#> | 9     | 4.4         | 2.9        | 1.4         | 0.2        | "setosa" |
-#> ⋮
-#> | 41    | 5.0         | 3.5        | 1.3         | 0.3        | "setosa" |
-#> | 42    | 4.5         | 2.3        | 1.3         | 0.3        | "setosa" |
-#> | 43    | 4.4         | 3.2        | 1.3         | 0.2        | "setosa" |
-#> | 44    | 5.0         | 3.5        | 1.6         | 0.6        | "setosa" |
-#> | 45    | 5.1         | 3.8        | 1.9         | 0.4        | "setosa" |
-#> | 46    | 4.8         | 3.0        | 1.4         | 0.3        | "setosa" |
-#> | 47    | 5.1         | 3.8        | 1.6         | 0.2        | "setosa" |
-#> | 48    | 4.6         | 3.2        | 1.4         | 0.2        | "setosa" |
-#> | 49    | 5.3         | 3.7        | 1.5         | 0.2        | "setosa" |
-#> | 50    | 5.0         | 3.3        | 1.4         | 0.2        | "setosa" |
+
 
 # Count the number of rows for each species
 showln(by(iris, :Species, df -> size(df, 1)))
@@ -110,26 +88,7 @@ tabulated = by(
     df -> size(df, 1)
 )
 showln(tabulated)
-#> 17x4 DataFrame
-#> |-------|--------------|-------------|------------|----|
-#> | Row # | Species      | SepalLength | SepalWidth | x1 |
-#> | 1     | "setosa"     | 4           | 3          | 4  |
-#> | 2     | "setosa"     | 5           | 2          | 1  |
-#> | 3     | "setosa"     | 5           | 3          | 23 |
-#> | 4     | "setosa"     | 5           | 4          | 17 |
-#> | 5     | "setosa"     | 6           | 4          | 5  |
-#> | 6     | "versicolor" | 5           | 2          | 3  |
-#> | 7     | "versicolor" | 5           | 3          | 3  |
-#> | 8     | "versicolor" | 6           | 2          | 6  |
-#> | 9     | "versicolor" | 6           | 3          | 29 |
-#> | 10    | "versicolor" | 7           | 3          | 9  |
-#> | 11    | "virginica"  | 5           | 3          | 1  |
-#> | 12    | "virginica"  | 6           | 2          | 1  |
-#> | 13    | "virginica"  | 6           | 3          | 22 |
-#> | 14    | "virginica"  | 7           | 3          | 19 |
-#> | 15    | "virginica"  | 7           | 4          | 1  |
-#> | 16    | "virginica"  | 8           | 3          | 4  |
-#> | 17    | "virginica"  | 8           | 4          | 2  |
+
 
 # you can setup a grouped dataframe like this
 gdf = groupby(iris,[:Species, :SepalLength, :SepalWidth])
