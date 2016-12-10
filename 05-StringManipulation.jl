@@ -1,5 +1,5 @@
-String Manipulations
-Github Link
+## String Manipulations
+###################################
 
 s1 = "The quick brown fox jumps over the lazy dog α,β,γ"
 
